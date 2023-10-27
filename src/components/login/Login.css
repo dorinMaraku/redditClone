@@ -1,0 +1,31 @@
+.signInForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: calc(80vh + 0.5vw);
+}
+
+.authRequest{
+    text-align: center;
+    font-size: calc(1rem + 0.5vw);
+
+    color: rgb(0, 0, 0, 0.8);
+    margin: 20px auto
+}
+
+.signIn-btn{
+    padding: 10px 20px;
+    background-color: rgba(240, 240, 240, 0.3);
+    font-size:  calc(0.5rem + 1vw);
+    color: rgb(0, 0, 0, 0.8);
+    border: 1px solid rgb(255, 69, 0, 0.7);
+    border-radius: 50px;
+    box-shadow: 3px 3px 3px rgb(255, 69, 0, 0.5);
+}
+.signIn-btn:hover{
+    padding: 10px 20px;
+    background-color: rgb(255, 69, 0, 0.8);
+    color: white;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.2);
+}

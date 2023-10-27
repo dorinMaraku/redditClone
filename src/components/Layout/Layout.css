@@ -1,0 +1,18 @@
+.App{
+    display: flex;
+    justify-content: center;
+    padding: 0 10rem;
+    background-color: var(--lightAsh);
+    transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    .App{
+        padding: 0 5rem;
+    }
+}
+@media screen and (max-width: 428px) {
+    .App{
+        padding: 0 1rem;
+    }
+}

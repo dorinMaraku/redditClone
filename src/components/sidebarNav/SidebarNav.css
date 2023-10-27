@@ -1,0 +1,107 @@
+.sidenav{
+    flex: 1;
+    margin-top: .75rem;
+    background-color: white;
+    box-shadow: -1px 1px 5px 5px var(--lightGrey);
+    border-radius: 5px;
+    width: 33%;
+    transition: all ease-in-out .1s;
+}
+
+.sidenav--logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .625rem 0;
+    margin-top: .5rem;
+    gap: .375rem
+}
+.sidenav--logo >.sidenav--reddit--icon{
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    margin: .5rem 0;
+    padding: .25rem; 
+    color: white;
+    background-color: var(--orange);
+    box-shadow: -2px 0px 5px 5px var(--lightAsh);
+
+}
+.sidenav--logo > .sidenav--logo--text{  
+    font-weight: 400;
+    color: var(--darkGrey);
+    text-shadow: -1px 0px var(--lightGrey);
+
+}
+.sidenav--logo >.sidenav--logo--text > .sidenav--span-text{
+    color: var(--orange)
+}
+
+.sidenav--search{
+    display: flex;
+    align-items: center;
+    margin: 1.5rem .5rem;
+}
+
+.sidenav--search > .sidenav--search--input{
+    padding-block: .375rem;
+    padding-inline: .75rem 1.375rem;
+    border: 1px solid var(--lightGrey);
+    box-shadow: -1px 1px 3px 1px var(--lightGrey);
+    border-radius: 0px 50px 50px 0px;
+    font-size: .875rem;
+    position: relative;
+    outline-width: 0;
+    width: 95%;
+}
+.sidenav--search > .sidenav--search--btn{
+    position: relative;
+    margin: 0;
+    right: 2rem;
+    color: var(--orange);
+    font-size: 20px;
+}
+
+.sidenav a{
+    text-decoration: none;
+    color: var(--fontGrey);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.sidenav--menu{
+    margin-left: .625rem;
+}
+
+.sidenav--links li{
+    padding: .5rem 1rem;
+}
+
+.sidenav--links h2{
+    padding: .5rem 1rem;
+    color: var(--fontGrey);
+    letter-spacing:1px;
+}
+
+.sidenav--subreddit > li{
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.subreddit--icon--image{
+    height: 1.875rem;
+    width: 1.875rem;
+    border-radius: 50%;
+}
+
+.sidenav hr{
+    margin: 1rem 0;
+    border: 1px solid var(--lightGrey);
+}
+
+@media  only screen and (max-width: 768px) {
+    .sidenav {
+        display: none;
+    }
+}
