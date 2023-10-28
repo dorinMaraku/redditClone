@@ -18,8 +18,9 @@
 
   /* fonts */
   --jakFont: 'Plus Jakarta Sans', sans-serif;
-  --font: 'Helvetica Neue', helvetica, verdana, arial, sans-serif;
+  --font: verdana, arial, sans-serif;
 }
+/* 'Helvetica Neue', helvetica, */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
