@@ -22,7 +22,8 @@
 .post a {
     font-weight: bold;
     text-decoration: none;
-    color: var(--black);
+    color: var(--fontGrey);
+    cursor: pointer;
 }
 .post a:hover{
     text-decoration: underline;
@@ -42,28 +43,30 @@
     gap: 0.25rem;
 }
 
-.post--left:hover{
-    background-color: var(--lightAsh);
+.post--left > .score {
+    color: var(--fontGrey);
+    font-size: .75rem;
+    font-weight: bold;
 }
 
 .post--left > .score:hover {
     color: green;
-    font-weight: 500;
 }
 
 .post--left > .arrow {
-    font-size: 1.5rem;
     color: var(--fontGrey);
 }
 
 .post--left > .arrow-up:hover {
+    background-color: var(--lightAsh);
     color: var(--orange);
-    font-size: 1.625rem;
+    font-size: 1.625rem !important;
 }
 
 .post--left > .arrow-down:hover {
+    background-color: var(--lightAsh);
     color: var(--blue);
-    font-size: 1.625rem;
+    font-size: 1.625rem !important;
 }
 
 .post--right{
@@ -79,8 +82,8 @@
 .post--right > .post--info {
     display: flex;
     align-items: center;
-    justify-content:last baseline;
-    font-size: smaller;
+    justify-content: baseline;
+    font-size: .75rem;
     gap: 0.5rem;
     color: var(--darkGrey);
 }
@@ -89,8 +92,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    font-size: smaller;
-    color: var(--darkGrey);
+    font-size: .75rem;
+    color: var(--fontGrey);
     gap: 0.25rem;
 }
 
@@ -106,7 +109,7 @@
 }
 
 .post--info > .author--info {
-    font-size: 0.75rem;
+    font-size: .75rem;
 }
 
 .author--info > span {
@@ -114,14 +117,9 @@
 }
 
 .post--right > h3 {
-    font-size: 1.25rem;
-    margin-top: .75rem; 
-    line-height: 1.2;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
     text-wrap: wrap;
-}
-
-.post--right > h3 a {
-    font-weight: 500;
 }
 
 .post--right > h3 a:hover {
@@ -131,15 +129,13 @@
 .post--right > img {
     width: 100%;
     border-radius: 5px;
-    margin: .25rem 0;
 }
 
 .post--right > .subreddit--selftext {
     color: var(--fontGrey);
-    letter-spacing: 0;
-    line-height: 1.2;
-    text-align: justify;
-    width: 100%;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    word-wrap: break-word;
     margin: .25rem auto;
 }
 
@@ -155,32 +151,34 @@
     justify-content: flex-start;
     align-items: center;
     gap: 0.25rem;
+    font-size: .75rem;
+    font-weight: bold;
 }
 
 .post--bottom--actions:hover {
     color: var(--black);
-    font-weight: 500;
-}
-
-.post--bottom--actions > .icon {
-    font-size: 1.25rem;
 }
 
 .comments--toggle--button {
     margin-left: auto;
     background-color: white;
     color: var(--midGrey);
-    border: 1px solid var(--blue);
+    border: 1px solid var(--darkGrey);
     border-radius: 5px;
     padding: .125rem .625rem;
-    font-size: .875rem;
-    font-weight: 500;
-    color: var(--blue);
-    box-shadow: 1px 1px 4px 1px var(--blue);
+    font-size: .75rem;
+    font-weight: bold;
+    color: var(--darkGrey);
+    box-shadow: 0px 0px 5px 0px var(--darkGrey);
 }
 
 .comments--toggle--button:hover {
     background-color: var(--blue);
     color: white;
+}
+
+.post .icon {
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 

@@ -40,11 +40,11 @@ const Header = () => {
             </ul>
         </div>
         <div className="header--right">
-            <AiFillBell className='icon--bell'/>
+            <AiFillBell className='icon icon--bell'/>
             <span className='message--counter'>3</span>
-            <RxAvatar className='user--img' />
+            <RxAvatar className='icon user--img' />
             <p className='user--name'>{'DM Code'}</p>
-            <RiArrowDropDownLine className='icon--dropdown'/>
+            <RiArrowDropDownLine className='icon icon--dropdown'/>
         </div>
     </header>
   )

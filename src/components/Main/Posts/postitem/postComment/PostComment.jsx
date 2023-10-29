@@ -28,14 +28,14 @@ const PostComment = ({comment}) => {
         </div>
         <div className='comment--footer'>
             <div className='comment--footer--left'>
-                <PiArrowFatUpLight className='arrow arrow-up'/>
+                <PiArrowFatUpLight className='icon arrow arrow-up'/>
                 <p className='score'>{comment.score}</p>
-                <PiArrowFatDownLight className='arrow arrow-down' />
+                <PiArrowFatDownLight className='icon arrow arrow-down' />
             </div>
             <div className='comment--footer--right'>
-                <p className='comment--footer--actions'><VscReply className='action--icon action--icon--one'/>Reply</p>
-                <p className='comment--footer--actions'><PiShare className='action--icon action--icon--two'/>Share</p>
-                <p className='comment--footer--actions'><BiDotsHorizontalRounded className='action--icon action--icon--three'/></p>
+                <p className='comment--footer--actions'><VscReply className='icon action--icon action--icon--one'/>Reply</p>
+                <p className='comment--footer--actions'><PiShare className='icon action--icon action--icon--two'/>Share</p>
+                <p className='comment--footer--actions'><BiDotsHorizontalRounded className='icon action--icon action--icon--three'/></p>
             </div>
         </div>
         <div>

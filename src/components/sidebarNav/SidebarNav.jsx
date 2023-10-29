@@ -3,7 +3,7 @@ import { FaRedditAlien } from 'react-icons/fa6'
 import './SidebarNav.css'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { getAllSubredits, getSubreditsStatus, getSubreditsError, fetchSubreddits } from '../../features/subreddits/subredditsSlice'
+import {setSelctedStatus, getAllSubredits, getSubreditsStatus, getSubreditsError, fetchSubreddits } from '../../features/subreddits/subredditsSlice'
 import { setSubredditUrl, fetchPosts } from '../../features/posts/postsSlice'
 import { useState, useEffect } from 'react'
 
@@ -14,6 +14,7 @@ const SidebarNav = () => {
     const subredditsStatus = useSelector(getSubreditsStatus)
     const error = useSelector(getSubreditsError)
     const [searchTerm, setSearchTerm] = useState('') 
+    const [active, setActive] = useState(false)
 
     useEffect(() => {
         if (subredditsStatus === 'idle'){
@@ -25,7 +26,7 @@ const SidebarNav = () => {
         e.preventDefault()
         setSearchTerm(e.target.value)
     }
-
+    
     const filteredSubreddits = subreddits.filter(subreddit => {
         if (searchTerm === '') {
             return subreddit
@@ -41,13 +42,16 @@ const SidebarNav = () => {
         renderedSubreddits = filteredSubreddits.map(subreddit => { 
             return (
                 <li key={subreddit.id}
-                    onClick={() => dispatch(setSubredditUrl(subreddit.url))}>
+                    onClick={() => {
+                        dispatch(setSubredditUrl(subreddit.url)) 
+                        dispatch(setSelctedStatus(subreddit.id))}}
+                    className={subreddit.active && 'active'}>
                     <img 
                         src={subreddit.icon_img} 
-                        className='subreddit--icon--image' 
+                        className='subreddit--icon--image ' 
                         alt='subreddit icon image'
                         style={{border: `3px solid ${subreddit.primary_color}` }}/>
-                    <p><Link to={subreddit.url}>{subreddit.display_name}</Link></p>
+                    <p className='subreddit--name'><Link to={subreddit.url}>{subreddit.display_name}</Link></p>
                 </li>
             )
         })
@@ -86,7 +90,7 @@ const SidebarNav = () => {
         <div className='sidenav--logo'
         onClick={() => dispatch(fetchPosts('/r/pics/'))}>
             <FaRedditAlien className='sidenav--reddit--icon'/>
-            <h1 className='sidenav--logo--text' >reddit<span className='sidenav--span-text'>Clone</span></h1>
+            <h2 className='sidenav--logo--text'>reddit<span className='sidenav--span-text'>Clone</span></h2 >
         </div>
         <form className='sidenav--search'>
             <input 
@@ -102,7 +106,7 @@ const SidebarNav = () => {
                 {renderedMenu}
             </ul>
             <hr/>
-            <h2>Subreddits</h2>
+            <h3>Subreddits</h3>
             <ul className='sidenav--subreddit'>
                 {renderedSubreddits}
             </ul>

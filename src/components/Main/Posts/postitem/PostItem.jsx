@@ -40,11 +40,11 @@ const PostItem = (props) => {
         <div className='post'>
             <div className='post--left'>
                 <PiArrowFatUpLight 
-                    className='arrow arrow-up'
+                    className='icon arrow arrow-up'
                     onClick={() => dispatch(postScoreValueIncrease(id))}/>
                 <p className='score'>{score <= 999 ? score : `${(score / 1000).toFixed(1)}k`}</p>
                 <PiArrowFatDownLight 
-                    className='arrow arrow-down' 
+                    className='icon arrow arrow-down' 
                     onClick={() => dispatch(postScoreValueDecrease(id))}/>
             </div>
             <div className='post--right'>
@@ -61,10 +61,10 @@ const PostItem = (props) => {
                 <div className='post--right--bottom'>
                     <p className='post--bottom--actions'
                         onClick={handleClick}
-                    ><BiComment className='icon'/>{num_comments} Comments</p>
-                    <p className='post--bottom--actions'><PiShare className='icon'/>Share</p>
-                    <p className='post--bottom--actions'><MdOutlineSaveAlt className='icon'/> Save</p>
-                    <p className='post--bottom--actions'><BiDotsHorizontalRounded className='icon'/></p>
+                    ><BiComment className='icon action-icon'/>{num_comments} Comments</p>
+                    <p className='post--bottom--actions'><PiShare className='icon action-icon'/>Share</p>
+                    <p className='post--bottom--actions'><MdOutlineSaveAlt className='icon action-icon'/> Save</p>
+                    <p className='post--bottom--actions'><BiDotsHorizontalRounded className='icon action-icon'/></p>
                     {showingComments && 
                         <button 
                         className='comments--toggle--button' 

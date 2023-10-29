@@ -1,8 +1,7 @@
 #root {
-  box-sizing: border-box;
+  /* box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  letter-spacing: 0.1px;
+  padding: 0; */
 
 
   /* colors */
@@ -70,7 +69,8 @@ table {
 
 .container{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  width: 100vw;
 }
 

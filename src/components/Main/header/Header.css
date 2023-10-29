@@ -11,11 +11,12 @@
 
 .header a {
     text-decoration: none;
+    cursor: pointer;
 }
+
 .header--left {
     display: flex;
-    margin-inline: .75;
-    font-size: 1rem;
+    margin-inline: .75rem;
 }
 
 .header--left ul {
@@ -25,14 +26,23 @@
 }
 
 .header--left li a {
-    padding: .5rem .75rem .5rem .75rem;
-    color: var(--fontGrey);
-    font-weight: 500;
+    padding: .5rem .625rem .5rem .625rem;
+    color: var(--darkGrey);
+    font-weight: bold;
+    transition: all ease-in-out .3s;
+}
+
+.header--left li a:hover {
+    color: var(--blue);
+    font-size: 1.125rem;
+    font-weight: bold;
+    border-bottom: 3px solid var(--blue);
 }
 
 .header--left a.active {
-    color: var(--orange);
-    border-bottom: 3px solid var(--orange);
+    color: var(--orange) !important;
+    font-size: 1.125rem;
+    border-bottom: 3px solid var(--orange) !important;
 }
 
 .header--right{
@@ -41,6 +51,7 @@
     justify-content: space-between;
     margin-left: auto;
     gap: .5rem;
+    color: var(--darkGrey);
 }
 
 /* .header--right > .user--img {
@@ -52,7 +63,6 @@
 .header--right > .icon--bell {
     font-size: 1.25rem;
     left: 1rem;
-    color: var(--black);
     position: relative;
 }
 
@@ -80,7 +90,11 @@
 }
 
 .header--right > .icon--dropdown {
-    font-size: 1.5rem;    
+    font-size: 1.5rem !important;    
+}
+
+.header .icon {
+    font-size: 1.25rem;
 }
 
 @media screen and (max-width: 400px) {

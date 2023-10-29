@@ -5,11 +5,10 @@
 .comment {
     display: flex; 
     flex-direction: column;
-    justify-content: baseline;
+    justify-content: flex-start;
     background-color: white;
     padding-inline: 2rem;
     box-shadow: -2px 0 1px 0px var(--lightGrey);
-    
 }
 
 .comment--header {
@@ -38,6 +37,7 @@
     font-weight: bold;
     text-decoration: none;
     color: var(--black);
+    cursor: pointer;
 }
 
 .comment--header > p > a:hover {
@@ -48,16 +48,17 @@
 .comment--body {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     margin: 0.25rem 0;
-    text-align: left;
 }
 
 .comment--body > p {
     font-size: .875rem;
-    width: 95%;
-    line-height: 1.2;
-    text-align: justify;
-    margin: 0.25rem auto;
+    color: var(--fontGrey);
+    inline-size: inherit;
+    line-height: 1.25rem;
+    word-break: break-all;
+    overflow-wrap: break-word;
 }
 
 .comment--footer {
@@ -77,50 +78,49 @@
 }
 
 .comment--footer--left > .arrow {
-    color: var(--fontGrey);
+    color: var(--darkGrey);
     font-size: 1.25rem;
 }
 
 .score {
-    font-size: .875rem;
+    font-size: .75rem;
+    font-weight: bold;
 }
 
 .score:hover {
     color: green;
-    font-weight: 500;
 }
 
 .arrow-up:hover {
     color: var(--orange);
+    font-size: 1.375rem !important;
 }
 
 .arrow-down:hover {
     color: var(--blue);
+    font-size: 1.375rem !important;
 }
 
 .comment--footer--right {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    color: var(--darkGrey);
 }
 
 .comment--footer--actions {
-    display: flex;
+    display: flex;  
     align-items: center;
-    font-size: .875rem;
-}
-
-.comment--footer--actions:hover {
-    font-weight: 500;
+    font-size: .75rem;
+    font-weight: bold;
 }
 
 .action--icon {
-    font-size: 1rem;
     padding: 0;
     margin-right: .5rem;
 }
 
-.action--icon:hover{
-    font-size: 1.125rem
+.comment .icon {
+    font-size: 1.25rem;
+    cursor: pointer;
 }
-

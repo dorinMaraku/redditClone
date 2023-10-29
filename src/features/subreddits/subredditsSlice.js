@@ -28,6 +28,16 @@ export const subredditsSlice = createSlice({
         setSearchTerm: (state, action) => {
             state.searchTerm = action.payload
         },
+        setSelctedStatus: (state, action) => {
+            state.subreddits.filter(subreddit => {
+                if(subreddit.id === action.payload) {
+                   subreddit.active = true
+                }
+                if(subreddit.id !== action.payload) {
+                   subreddit.active = false
+                }
+            })
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -37,7 +47,10 @@ export const subredditsSlice = createSlice({
         .addCase(fetchSubreddits.fulfilled, (state, action) => {
             state.status = 'succeeded'
             // console.log(action.payload) 
-            state.subreddits = action.payload
+            state.subreddits = action.payload.map(subreddit => ({
+                ...subreddit,
+                active: false
+            }))
         })
         .addCase(fetchSubreddits.rejected, (state, action) => {
             state.status = 'failed'
@@ -46,7 +59,7 @@ export const subredditsSlice = createSlice({
     }
 })
 
-export const {setSearchTerm} = subredditsSlice.actions
+export const {setSearchTerm, setSelctedStatus} = subredditsSlice.actions
 export const getAllSubredits = state => state.subreddits.subreddits
 export const getSubreditsStatus = state => state.subreddits.status
 export const getSubreditsError = state => state.subreddits.error
